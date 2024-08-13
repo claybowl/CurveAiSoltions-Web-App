@@ -1,0 +1,17 @@
+
+ import "./user.zmodel"  
+
+model Message {
+
+    id        String    @id @default(uuid())  
+    content   String      
+    timestamp String      
+    senderId  String?      
+    sender    User?      @relation(fields: [senderId], references: [id], name:"sender")  
+    receiverId String?      
+    receiver  User?      @relation(fields: [receiverId], references: [id], name:"receiver")  
+
+dateCreated DateTime @default(now())
+      dateUpdated DateTime @updatedAt  @default(now())
+      @@allow("all", true)
+}

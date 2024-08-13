@@ -1,0 +1,33 @@
+import "./account.zmodel";
+import "./session.zmodel";
+import "./role.zmodel";
+
+import './article.zmodel'
+
+import './aiReadinessAssessment.zmodel'
+
+import './message.zmodel'
+
+model User {
+    id               String    @id @default(uuid())
+    name             String?
+    email            String?   @unique
+    pictureUrl       String?
+    stripeCustomerId String?
+    password         String?   @password @omit
+    dateCreated      DateTime  @default(now())
+    dateUpdated      DateTime  @updatedAt @default(now())
+    accounts         Account[]
+    sessions         Session[]
+    roles            Role[]
+
+articlesAsAuthor Article[] @relation("author")  
+        aiReadinessAssessments AiReadinessAssessment[] @relation("user")  
+        messagesAsSender Message[] @relation("sender")  
+        messagesAsReceiver Message[] @relation("receiver")  
+
+@@auth()
+    @@allow("all", auth().id == this.id)
+    @@allow('all', auth().roles?[name == 'admin'])
+    @@allow("create", true)
+}

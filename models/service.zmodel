@@ -1,0 +1,12 @@
+
+
+model Service {
+
+    id        String    @id @default(uuid())  
+    name      String      
+    description String?      
+
+dateCreated DateTime @default(now())
+      dateUpdated DateTime @updatedAt  @default(now())
+      @@allow("all", true)
+}
