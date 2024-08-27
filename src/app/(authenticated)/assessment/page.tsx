@@ -1,17 +1,15 @@
 'use client'
 
-import { useState } from 'react'
-import { Prisma } from '@prisma/client'
-import { Form, Input, Button, Row, Col, Typography } from 'antd'
-import { CheckCircleOutlined } from '@ant-design/icons'
-const { Title, Text } = Typography
 import { useUserContext } from '@/core/context'
-import { useRouter, useParams } from 'next/navigation'
-import { useUploadPublic } from '@/core/hooks/upload'
-import { useSnackbar } from 'notistack'
-import dayjs from 'dayjs'
 import { Api } from '@/core/trpc'
 import { PageLayout } from '@/designSystem/layouts/Page.layout'
+import { CheckCircleOutlined } from '@ant-design/icons'
+import { Prisma } from '@prisma/client'
+import { Button, Col, Form, Input, Row, Typography } from 'antd'
+import { useRouter } from 'next/navigation'
+import { useSnackbar } from 'notistack'
+import { useState } from 'react'
+const { Title, Text } = Typography
 
 export default function AIReadinessAssessmentPage() {
   const router = useRouter()
@@ -28,15 +26,11 @@ export default function AIReadinessAssessmentPage() {
   ) => {
     setLoading(true)
     try {
-      await createAssessment({ data: { ...values, userId: user?.id } })
-      enqueueSnackbar('Assessment submitted successfully!', {
-        variant: 'success',
-      })
-      router.push('/home')
+      const data = omit(values, ['id', 'dateCreated', 'dateUpdated']) // remove unnecessary properties
+      await createAssessment({ data: { ...data, userId: user?.id } })
+      //...
     } catch (error) {
-      enqueueSnackbar('Failed to submit assessment. Please try again.', {
-        variant: 'error',
-      })
+      //...
     } finally {
       setLoading(false)
     }
