@@ -26,6 +26,11 @@ export default function AIReadinessAssessmentPage() {
   ) => {
     setLoading(true)
     try {
+      const omit = (obj, keys) => {
+        const result = { ...obj }
+        keys.forEach(key => delete result[key])
+        return result
+      }
       const data = omit(values, ['id', 'dateCreated', 'dateUpdated']) // remove unnecessary properties
       await createAssessment({ data: { ...data, userId: user?.id } })
       //...
