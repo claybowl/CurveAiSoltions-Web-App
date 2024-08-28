@@ -5,6 +5,7 @@ import { MrbSplashScreen } from '@/designSystem'
 import { NavigationLayout } from '@/designSystem/layouts/NavigationLayout'
 import { useRouter } from 'next/navigation'
 import { ReactNode, useEffect } from 'react'
+import { NavigationItem } from '@/designSystem/layouts/NavigationLayout/types/NavigationItem'
 
 type Props = { children: ReactNode }
 
@@ -24,6 +25,55 @@ export default function AuthenticatedLayout({ children }: Props) {
   }
 
   if (isLoggedIn) {
-    return <NavigationLayout>{children}</NavigationLayout>
+    const navigationItems: NavigationItem[] = [
+      {
+        key: '/home',
+        label: 'Landing Page',
+        onClick: () => router.push('/home'),
+      },
+      {
+        key: '/membership',
+        label: 'Membership Page',
+        onClick: () => router.push('/membership'),
+      },
+      {
+        key: '/services',
+        label: 'Services Page',
+        onClick: () => router.push('/services'),
+      },
+      {
+        key: '/assessment',
+        label: 'AI Readiness Assessment Page',
+        onClick: () => router.push('/assessment'),
+      },
+      {
+        key: '/communication',
+        label: 'Communication Page',
+        onClick: () => router.push('/communication'),
+      },
+      {
+        key: '/admin',
+        label: 'Admin Dashboard',
+        onClick: () => router.push('/admin'),
+      },
+      {
+        key: '/developer',
+        label: 'Developer Dashboard',
+        onClick: () => router.push('/developer'),
+      },
+      {
+        key: '/prototypes',
+        label: 'Prototypes',
+        onClick: () => router.push('/prototypes'),
+      },
+    ]
+
+    return (
+      <NavigationLayout items={navigationItems}>
+        {children}
+      </NavigationLayout>
+    )
   }
+
+  return null
 }

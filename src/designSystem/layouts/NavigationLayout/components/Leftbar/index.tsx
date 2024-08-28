@@ -1,6 +1,6 @@
 import { Flex, Menu, Row } from 'antd'
 import Sider from 'antd/es/layout/Sider'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { ReactNode } from 'react'
 
 interface Props {
@@ -11,6 +11,20 @@ interface Props {
 
 export const Leftbar: React.FC<Props> = ({ logo, items, itemsBottom }) => {
   const pathname = usePathname()
+  const router = useRouter()
+
+  const handlePrototypesClick = () => {
+    router.push('/prototypes')
+  }
+
+  const updatedItems = [
+    ...items,
+    {
+      key: 'prototypes',
+      label: 'Prototypes',
+      onClick: handlePrototypesClick,
+    },
+  ]
 
   return (
     <>
@@ -22,7 +36,7 @@ export const Leftbar: React.FC<Props> = ({ logo, items, itemsBottom }) => {
         <Flex vertical justify="space-between" flex={1} className="pb-4">
           <Menu
             mode="inline"
-            items={items}
+            items={updatedItems}
             selectedKeys={[pathname]}
             style={{ width: '100%' }}
           />
