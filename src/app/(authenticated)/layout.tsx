@@ -3,11 +3,11 @@
 import { useUserContext } from '@/core/context'
 import { MrbSplashScreen } from '@/designSystem'
 import { NavigationLayout } from '@/designSystem/layouts/NavigationLayout'
+import { NavigationItem } from '@/designSystem/layouts/NavigationLayout/types/NavigationItem'
 import { useRouter } from 'next/navigation'
 import { ReactNode, useEffect } from 'react'
-import { NavigationItem } from '@/designSystem/layouts/NavigationLayout/types/NavigationItem'
 
-type Props = { children: ReactNode }
+type Props = { children: ReactNode; items: NavigationItem[]; }
 
 export default function AuthenticatedLayout({ children }: Props) {
   const { isLoggedIn, isLoading } = useUserContext()
@@ -68,12 +68,13 @@ export default function AuthenticatedLayout({ children }: Props) {
       },
     ]
 
+   
     return (
       <NavigationLayout items={navigationItems}>
         {children}
       </NavigationLayout>
     )
-  }
+
 
   return null
 }
