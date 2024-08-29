@@ -68,9 +68,8 @@ export default function AuthenticatedLayout({ children }: Props) {
       },
     ]
 
-   
     return (
-      <NavigationLayout items={navigationItems}>
+      <NavigationLayout>
         {children}
       </NavigationLayout>
     )
