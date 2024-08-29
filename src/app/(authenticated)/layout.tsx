@@ -68,6 +68,12 @@ export default function AuthenticatedLayout({ children }: Props) {
       },
     ]
 
+    console.log(navigationItems)
+
+    console.log(NavigationLayout) // Debugging NavigationLayout
+
+    console.log(children) // Debugging children
+
     return (
       <NavigationLayout items={navigationItems}>{children}</NavigationLayout>
     )
