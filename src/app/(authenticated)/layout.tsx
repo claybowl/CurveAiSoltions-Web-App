@@ -7,7 +7,7 @@ import { NavigationItem } from '@/designSystem/layouts/NavigationLayout/types/Na
 import { useRouter } from 'next/navigation'
 import { ReactNode, useEffect } from 'react'
 
-type Props = { children: ReactNode; items: NavigationItem[] }
+type Props = { children: ReactNode }
 
 export default function AuthenticatedLayout({ children }: Props) {
   const { isLoggedIn, isLoading } = useUserContext()
@@ -68,7 +68,9 @@ export default function AuthenticatedLayout({ children }: Props) {
       },
     ]
 
-    return <NavigationLayout>{children}</NavigationLayout>
+    return (
+      <NavigationLayout items={navigationItems}>{children}</NavigationLayout>
+    )
   }
 
   return null
