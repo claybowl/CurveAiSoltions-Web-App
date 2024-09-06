@@ -87,11 +87,11 @@ export const Topbar: React.FC<Props> = ({
                   <Dropdown menu={{ items: itemsProfile }} trigger={['click']}>
                     <Avatar
                       src={user?.pictureUrl}
-                      alt={user.name}
+                      alt={user?.name || 'User'}
                       style={{ cursor: 'pointer' }}
                       size={30}
                     >
-                      {Utility.stringToInitials(user?.name)}
+                      {Utility.stringToInitials(user?.name || 'U')}
                     </Avatar>
                   </Dropdown>
                 </>
