@@ -7,10 +7,11 @@ import { useDesignSystem } from '../../provider'
 import { Leftbar } from './components/Leftbar'
 import { Logo } from './components/Logo'
 import { Topbar } from './components/Topbar/index.layout'
+import { NavigationItem } from './types/NavigationItem'
 
 interface Props {
   children: ReactNode
-  items: ReactNode
+  items: NavigationItem[]
 }
 
 export const NavigationLayout: React.FC<Props> = ({ items, children }) => {
