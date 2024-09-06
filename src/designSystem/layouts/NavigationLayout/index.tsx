@@ -10,9 +10,10 @@ import { Topbar } from './components/Topbar/index.layout'
 
 interface Props {
   children: ReactNode
+  items: ReactNode
 }
 
-export const NavigationLayout: React.FC<Props> = ({ children }) => {
+export const NavigationLayout: React.FC<Props> = ({ items, children }) => {
   const router = useRouter()
 
   const { user, authenticationStatus: isLoggedIn } = useUserContext()
