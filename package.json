@@ -18,7 +18,7 @@
     "database:migration:generate": "prisma migrate dev --name auto --create-only",
     "database:migration:run": "prisma migrate deploy",
     "database:studio": "prisma studio",
-    "docker:init": "docker compose -p marblism-app up -d",
+    "docker:init": "docker compose -p marblism-app up -d && pnpm run env:init && pnpm run global:sync && pnpm run database:seed",
     "env:init": "node scripts/env.js",
     "format": "pnpm run format:code && pnpm run format:models",
     "format:code": "prettier --write \"src/!(*.marblism)/**/*.{ts,tsx}\"",
