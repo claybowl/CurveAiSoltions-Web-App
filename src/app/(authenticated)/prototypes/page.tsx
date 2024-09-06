@@ -1,12 +1,12 @@
-'use client'
+Sure, 'use client'
 
-import { Typography, Spin, Row, Col } from 'antd'
+import { Chatbot } from '@/components/Chatbot'
 import { useUserContext } from '@/core/context'
-import { useRouter, useParams } from 'next/navigation'
-import { useSnackbar } from 'notistack'
 import { Api } from '@/core/trpc'
 import { PageLayout } from '@/designSystem/layouts/Page.layout'
-import { Chatbot } from '@/components/Chatbot'
+import { Col, Row, Spin, Typography } from 'antd'
+import { useParams, useRouter } from 'next/navigation'
+import { useSnackbar } from 'notistack'
 
 const { Title, Paragraph } = Typography
 
@@ -17,10 +17,10 @@ export default function PrototypesPage() {
   const { enqueueSnackbar } = useSnackbar()
 
   const {
-    data: prototypes,
     isLoading,
     refetch,
-  } = Api.prototype.findMany.useQuery({})
+    data: prototypes, // Assuming 'prototypes' is the correct property
+  } = Api.service.findMany.useQuery({}) // Correct the property access
 
   if (isLoading) {
     return (
