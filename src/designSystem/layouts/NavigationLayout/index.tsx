@@ -7,12 +7,14 @@ import { useDesignSystem } from '../../provider'
 import { Leftbar } from './components/Leftbar'
 import { Logo } from './components/Logo'
 import { Topbar } from './components/Topbar/index.layout'
+import { NavigationItem } from './types/NavigationItem'
 
 interface Props {
   children: ReactNode
+  items: NavigationItem[]
 }
 
-export const NavigationLayout: React.FC<Props> = ({ children }) => {
+export const NavigationLayout: React.FC<Props> = ({ children, items }) => {
   const router = useRouter()
 
   const { user, authenticationStatus: isLoggedIn } = useUserContext()
@@ -23,49 +25,7 @@ export const NavigationLayout: React.FC<Props> = ({ children }) => {
     router.push(url)
   }
 
-  let itemsLeftbar = [
-    {
-      key: '/home',
-      label: 'Landing Page',
-      onClick: () => goTo('/home'),
-    },
-
-    {
-      key: '/membership',
-      label: 'Membership Page',
-      onClick: () => goTo('/membership'),
-    },
-
-    {
-      key: '/services',
-      label: 'Services Page',
-      onClick: () => goTo('/services'),
-    },
-
-    {
-      key: '/assessment',
-      label: 'AI Readiness Assessment Page',
-      onClick: () => goTo('/assessment'),
-    },
-
-    {
-      key: '/communication',
-      label: 'Communication Page',
-      onClick: () => goTo('/communication'),
-    },
-
-    {
-      key: '/admin',
-      label: 'Admin Dashboard',
-      onClick: () => goTo('/admin'),
-    },
-
-    {
-      key: '/developer',
-      label: 'Developer Dashboard',
-      onClick: () => goTo('/developer'),
-    },
-  ]
+  let itemsLeftbar = items
 
   let itemsTopbar = []
 

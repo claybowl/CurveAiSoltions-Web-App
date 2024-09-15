@@ -7,6 +7,7 @@ import { useSnackbar } from 'notistack'
 import { Api } from '@/core/trpc'
 import { PageLayout } from '@/designSystem/layouts/Page.layout'
 import { Chatbot } from '@/components/Chatbot'
+import { RouterOutputs } from '@/core/trpc/internal/trpc.client'
 
 const { Title, Paragraph } = Typography
 
@@ -20,7 +21,11 @@ export default function PrototypesPage() {
     data: prototypes,
     isLoading,
     refetch,
-  } = Api.prototype.findMany.useQuery({})
+  } = Api.prototype.findMany.useQuery() as {
+    data: RouterOutputs['prototype']['findMany']
+    isLoading: boolean
+    refetch: () => void
+  }
 
   if (isLoading) {
     return (
