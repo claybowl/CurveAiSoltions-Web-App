@@ -16,7 +16,7 @@ export const MrbHtml: React.FC<Props> = ({ children }: Props) => {
       style={{ background: token.colorBgBase, color: token.colorTextBase }}
     >
       <head>
-        <title>Curve AI Solutions Consultation and Development</title>
+        <title>Curve AI | Consultation and Development Solutions</title>
       </head>
       <body>{children}</body>
     </html>
