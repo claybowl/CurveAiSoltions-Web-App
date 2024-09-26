@@ -76,25 +76,26 @@ export const Topbar: React.FC<Props> = ({
           </Flex>
 
           <Flex align="center" gap="middle">
-            {isLoggedIn && (
-              <>
-                {checkRole('admin') && (
-                  <Tag color="red" bordered={false}>
-                    Admin
-                  </Tag>
-                )}
-                <Dropdown menu={{ items: itemsProfile }} trigger={['click']}>
-                  <Avatar
-                    src={user?.pictureUrl}
-                    alt={user.name}
-                    style={{ cursor: 'pointer' }}
-                    size={30}
-                  >
-                    {Utility.stringToInitials(user?.name)}
-                  </Avatar>
-                </Dropdown>
-              </>
-            )}
+            {isLoggedIn &&
+              user && ( // Add a check to ensure user is not null
+                <>
+                  {checkRole('admin') && (
+                    <Tag color="red" bordered={false}>
+                      Admin
+                    </Tag>
+                  )}
+                  <Dropdown menu={{ items: itemsProfile }} trigger={['click']}>
+                    <Avatar
+                      src={user?.pictureUrl}
+                      alt={user?.name || 'User'}
+                      style={{ cursor: 'pointer' }}
+                      size={30}
+                    >
+                      {Utility.stringToInitials(user?.name || 'U')}
+                    </Avatar>
+                  </Dropdown>
+                </>
+              )}
           </Flex>
         </Flex>
       </Header>

@@ -43,6 +43,11 @@ const createContextInternal = async (options: CreateContextOptions) => {
 
   const database = await Database.get()
 
+  // Fetch the prototype if it exists
+  const prototype = await database.prototype.findFirst({
+    where: { userId: session?.user?.id },
+  })
+
   return {
     session,
     headers: options.headers,
@@ -50,6 +55,7 @@ const createContextInternal = async (options: CreateContextOptions) => {
     databaseUnprotected,
     prisma: database,
     masterPrisma: databaseUnprotected,
+    prototype,
   }
 }
 
