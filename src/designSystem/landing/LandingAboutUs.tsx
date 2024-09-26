@@ -20,7 +20,7 @@ const teamMembers: TeamMember[] = [
     name: 'Austin Belcheff',
     title: 'CEO',
     bio: 'John has over 20 years of experience in the tech industry and is passionate about innovation.',
-    photoUrl: '/images/aus_tin.jpg',
+    photoUrl: '/images/aus_tin.png',
   },
   {
     name: 'Clayton Christian',
@@ -48,8 +48,8 @@ const LandingAboutUs: React.FC<Props> = ({ id }) => {
             <Image
               src={member.photoUrl}
               alt={member.name}
-              width={128} // Set your desired width here
-              height={128} // Set your desired height here
+              width={48} // Set your desired width here
+              height={48} // Set your desired height here
               className="w-48 h-48 rounded-full mx-auto mb-4 object-cover"
             />
             <Title level={4}>{member.name}</Title>
