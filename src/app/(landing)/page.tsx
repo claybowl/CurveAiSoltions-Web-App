@@ -1,4 +1,5 @@
 'use client'
+import LandingAboutUs from '@/designSystem/landing/LandingAboutUs'
 import { LandingCTA } from '@/designSystem/landing/LandingCTA'
 import { LandingContainer } from '@/designSystem/landing/LandingContainer'
 import LandingFAQ from '@/designSystem/landing/LandingFAQ'
@@ -12,9 +13,9 @@ import { LandingSocialRating } from '@/designSystem/landing/LandingSocialRating'
 import { LandingTestimonials } from '@/designSystem/landing/LandingTestimonials'
 import {
   EditOutlined,
-  SolutionOutlined,
   RocketOutlined,
   SmileOutlined,
+  SolutionOutlined,
   TeamOutlined,
   TrophyOutlined,
 } from '@ant-design/icons'
@@ -24,78 +25,79 @@ export default function LandingPage() {
     {
       heading: 'Expert-Managed AI Solutions',
       description:
-        'Get personalized AI tool implementations managed by experienced AI engineers.',
+        'Personalized AI tool implementations managed by experienced AI engineers.',
       icon: <SolutionOutlined />,
     },
     {
       heading: 'Comprehensive AI/ML Resources',
       description:
-        'Access a wealth of technical articles, blogs, and information on AI and ML.',
+        'Access a wide array of technical articles, blogs, and in-depth information on AI and ML.',
       icon: <RocketOutlined />,
     },
     {
       heading: 'Tailored AI Solutions',
       description:
-        'Receive customized project pitches based on your specific business needs.',
+        'Receive bespoke project proposals customized for your specific business needs.',
       icon: <EditOutlined />,
     },
     {
       heading: 'Seamless Communication',
       description:
-        'Collaborate effortlessly with developers for personalized project execution.',
+        'Collaborate easily with our developers for personalized project execution.',
       icon: <TeamOutlined />,
     },
     {
       heading: 'Stay Competitive',
-      description: 'Leverage AI technologies to stay ahead in your industry.',
+      description:
+        'Leverage cutting-edge AI technologies to maintain your competitive edge.',
       icon: <TrophyOutlined />,
     },
     {
       heading: 'Educational Resources',
       description:
-        'Learn and grow with our extensive library of AI/ML educational content.',
+        'Expand your knowledge with our extensive collection of AI/ML educational materials.',
       icon: <SmileOutlined />,
     },
   ]
 
   const testimonials = [
     {
-      name: 'John Doe',
+      name: 'Jacob Marshall',
       designation: 'CEO, Tech Innovators',
       content:
         'This platform transformed our business operations with seamless AI integration.',
       avatar: 'https://randomuser.me/api/portraits/men/5.jpg',
     },
     {
-      name: 'Jane Smith',
+      name: 'Josh Beeson',
       designation: 'CTO, Future Enterprises',
       content:
         'The expert-managed AI solutions provided us with a competitive edge.',
       avatar: 'https://randomuser.me/api/portraits/women/6.jpg',
     },
     {
-      name: 'Michael Johnson',
+      name: 'Heather Hayes',
       designation: 'Head of Data, Analytics Co.',
       content:
         'The tailored AI solutions were exactly what we needed to scale our projects.',
       avatar: 'https://randomuser.me/api/portraits/men/7.jpg',
     },
     {
-      name: 'Emily Davis',
+      name: 'Business Owner #1',
       designation: 'Founder, AI Startups',
       content:
         'The educational resources are top-notch and helped our team upskill quickly.',
       avatar: 'https://randomuser.me/api/portraits/men/12.jpg',
     },
     {
-      name: 'Robert Brown',
+      name: 'Remote Worker #1',
       designation: 'Manager, Business Solutions',
       content:
         'Seamless communication with developers made project execution a breeze.',
       avatar: 'https://randomuser.me/api/portraits/men/17.jpg',
     },
     {
-      name: 'Sophia Wilson',
+      name: 'Remote Worker #2',
       designation: 'Director, Innovation Hub',
       content:
         'The platform’s comprehensive resources are invaluable for our AI initiatives.',
@@ -113,6 +115,10 @@ export default function LandingPage() {
       link: '#features',
     },
     {
+      title: 'About Us',
+      link: '#about-us',
+    },
+    {
       title: 'Pricing',
       link: '#pricing',
     },
@@ -121,24 +127,24 @@ export default function LandingPage() {
   const packages = [
     {
       title: 'Alpha Wave Membership',
-      description: 'Exclusive for Kickstarter backers',
-      monthly: 9,
-      yearly: 69,
+      description: 'Exclusive tier for Kickstarter backers',
+      monthly: 29,
+      yearly: 299,
       features: ['Personalized AI Solutions', 'Access to All Resources'],
     },
     {
       title: 'Theta Wave Membership',
       description: 'Ideal for new clients',
-      monthly: 19,
-      yearly: 149,
+      monthly: 39,
+      yearly: 399,
       features: ['Expert-Managed Implementations', 'Priority Support'],
       highlight: true,
     },
     {
-      title: 'Enterprise Solutions',
-      description: 'Custom solutions for large businesses',
-      monthly: 49,
-      yearly: 399,
+      title: 'Gamma Wave Membership',
+      description: 'Custom enterprise solutions.',
+      monthly: 69,
+      yearly: 599,
       features: ['Dedicated AI Engineer', 'Custom Project Pitches'],
     },
   ]
@@ -157,7 +163,7 @@ export default function LandingPage() {
     {
       question: 'What kind of support is available?',
       answer:
-        'We offer priority support for Theta Wave members and dedicated support for Enterprise clients.',
+        'We offer support at all membership levels, with priority support for Theta Wave and Enterprise plans',
     },
     {
       question: 'Can I upgrade my membership plan?',
@@ -176,12 +182,13 @@ export default function LandingPage() {
   const steps = [
     {
       heading: 'Sign Up',
-      description: 'Create an account and choose your membership plan.',
+      description:
+        'Sign up with ease and select the membership plan that best suits your needs.',
     },
     {
       heading: 'AI Readiness Assessment',
       description:
-        'Fill out our AI Readiness Assessment form to help us understand your needs.',
+        'Complete our comprehensive AI Readiness Assessment to tailor solutions specifically to your business.',
     },
     {
       heading: 'Receive Custom Solutions',
@@ -198,15 +205,18 @@ export default function LandingPage() {
   const painPoints = [
     {
       emoji: '🤯',
-      title: 'AI Complexity',
+      title:
+        'AI Complexity: Demystifying the intricate nature of AI with simplified solutions.',
     },
     {
       emoji: '❓',
-      title: 'Lack of Expertise',
+      title:
+        ' Lack of Expertise: Bridging the knowledge gap with expert guidance.',
     },
     {
       emoji: '🚧',
-      title: 'Implementation Challenges',
+      title:
+        'Implementation Challenges: Streamlining AI integration for hassle-free deployment.',
     },
   ]
 
@@ -239,11 +249,12 @@ export default function LandingPage() {
         socialProof={
           <LandingSocialRating
             avatarItems={avatarItems}
-            numberOfUsers={1000}
+            numberOfUsers={100}
             suffixText="from happy clients"
           />
         }
       />
+      <LandingAboutUs id="about-us" />
       <LandingSocialProof logos={logos} title="Featured on" />
       <LandingPainPoints
         title="AI Adoption Challenges"
