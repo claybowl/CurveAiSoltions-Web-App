@@ -1,4 +1,5 @@
 import { Typography } from 'antd'
+import Image from 'next/image'
 import React from 'react'
 
 const { Title, Paragraph } = Typography
@@ -44,9 +45,11 @@ const LandingAboutUs: React.FC<Props> = ({ id }) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {teamMembers.map(member => (
           <div key={member.name} className="text-center">
-            <img
+            <Image
               src={member.photoUrl}
               alt={member.name}
+              width={128} // Set your desired width here
+              height={128} // Set your desired height here
               className="w-48 h-48 rounded-full mx-auto mb-4 object-cover"
             />
             <Title level={4}>{member.name}</Title>
