@@ -1,4 +1,5 @@
 'use client'
+import LandingAboutUs from '@/designSystem/landing/LandingAboutUs'
 import { LandingCTA } from '@/designSystem/landing/LandingCTA'
 import { LandingContainer } from '@/designSystem/landing/LandingContainer'
 import LandingFAQ from '@/designSystem/landing/LandingFAQ'
@@ -10,7 +11,6 @@ import { LandingPricing } from '@/designSystem/landing/LandingPricing'
 import { LandingSocialProof } from '@/designSystem/landing/LandingSocialProof'
 import { LandingSocialRating } from '@/designSystem/landing/LandingSocialRating'
 import { LandingTestimonials } from '@/designSystem/landing/LandingTestimonials'
-import LandingAboutUs from '@/designSystem/landing/LandingAboutUs'
 import {
   EditOutlined,
   RocketOutlined,

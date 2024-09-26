@@ -1,27 +1,31 @@
-import React from 'react';
-import { Typography } from 'antd';
+import { Typography } from 'antd'
+import React from 'react'
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph } = Typography
 
 interface TeamMember {
-  name: string;
-  title: string;
-  bio: string;
-  photoUrl: string;
+  name: string
+  title: string
+  bio: string
+  photoUrl: string
+}
+
+interface Props {
+  id?: string
 }
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'John Doe',
+    name: 'Austin Belcheff',
     title: 'CEO',
     bio: 'John has over 20 years of experience in the tech industry and is passionate about innovation.',
-    photoUrl: '/images/john-doe.jpg',
+    photoUrl: '/images/aus_tin.jpg',
   },
   {
-    name: 'Jane Smith',
+    name: 'Clayton Christian',
     title: 'CTO',
     bio: 'Jane is a brilliant technologist with a track record of developing cutting-edge solutions.',
-    photoUrl: '/images/jane-smith.jpg',
+    photoUrl: '/images/clay_ton.jpg',
   },
   {
     name: 'Mike Johnson',
@@ -29,14 +33,16 @@ const teamMembers: TeamMember[] = [
     bio: 'Mike excels in optimizing operations and driving business growth strategies.',
     photoUrl: '/images/mike-johnson.jpg',
   },
-];
+]
 
-const LandingAboutUs: React.FC = () => {
+const LandingAboutUs: React.FC<Props> = ({ id }) => {
   return (
-    <div className="max-w-4xl mx-auto py-12">
-      <Title level={2} className="text-center mb-8">Our Leadership Team</Title>
+    <div id={id} className="max-w-4xl mx-auto py-12">
+      <Title level={2} className="text-center mb-8">
+        Our Leadership Team
+      </Title>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {teamMembers.map((member) => (
+        {teamMembers.map(member => (
           <div key={member.name} className="text-center">
             <img
               src={member.photoUrl}
@@ -50,7 +56,7 @@ const LandingAboutUs: React.FC = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LandingAboutUs;
+export default LandingAboutUs
