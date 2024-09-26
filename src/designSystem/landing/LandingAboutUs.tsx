@@ -48,8 +48,8 @@ const LandingAboutUs: React.FC<Props> = ({ id }) => {
             <Image
               src={member.photoUrl}
               alt={member.name}
-              width={48} // Set your desired width here
-              height={48} // Set your desired height here
+              width={192} // Increased width
+              height={192} // Increased height
               className="w-48 h-48 rounded-full mx-auto mb-4 object-cover"
             />
             <Title level={4}>{member.name}</Title>
