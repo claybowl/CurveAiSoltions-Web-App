@@ -10,6 +10,7 @@ import { LandingPricing } from '@/designSystem/landing/LandingPricing'
 import { LandingSocialProof } from '@/designSystem/landing/LandingSocialProof'
 import { LandingSocialRating } from '@/designSystem/landing/LandingSocialRating'
 import { LandingTestimonials } from '@/designSystem/landing/LandingTestimonials'
+import { LandingAboutUs } from '@/designSystem/landing/LandingAboutUs'
 import {
   EditOutlined,
   RocketOutlined,
@@ -112,6 +113,10 @@ export default function LandingPage() {
     {
       title: 'Features',
       link: '#features',
+    },
+    {
+      title: 'About Us',
+      link: '#about-us',
     },
     {
       title: 'Pricing',
@@ -249,6 +254,7 @@ export default function LandingPage() {
           />
         }
       />
+      <LandingAboutUs id="about-us" />
       <LandingSocialProof logos={logos} title="Featured on" />
       <LandingPainPoints
         title="AI Adoption Challenges"
