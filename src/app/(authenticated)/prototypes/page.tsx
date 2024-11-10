@@ -1,4 +1,4 @@
-Sure, 'use client'
+'use client'
 
 import { Chatbot } from '@/components/Chatbot'
 import { useUserContext } from '@/core/context'
