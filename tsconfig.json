@@ -12,7 +12,7 @@
     /* Bundled projects */
     "lib": ["dom", "dom.iterable", "ES2022"],
     "noEmit": true,
-    "module": "commonjs",
+    "module": "es2020",
     "jsx": "preserve",
     "plugins": [
       {
